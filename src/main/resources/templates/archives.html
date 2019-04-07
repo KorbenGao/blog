@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Time Line</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/myStyle.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+          crossorigin="anonymous">
+</head>
+
+<body>
+
+<!--navigation-->
+<nav th:replace="_fragments :: menu(4)" class="ui inverted attached segment m-padding-tb-mini m-shadow-small"></nav>
+
+<!--content-->
+<div class="m-padding-tb-large">
+    <div class="ui container">
+        <!--header-->
+        <div class="ui top attached segment">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <h3 class="ui teal header">
+                        <i class="fas fa-history"></i>&nbsp;Time Line
+                    </h3>
+                </div>
+                <div class="right aligned column">
+                    Total:&nbsp;
+                    <h3 class="ui orange header m-inline-block" th:text="${blogCount}">
+                        14
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+        <!--one blog for each year-->
+        <th:block th:each="item : ${archiveMap}">
+            <h2 class="ui center aligned header" th:text="${item.key}">2019</h2>
+            <div class="ui fluid vertical menu">
+                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item"
+                   th:each="blog : ${item.value}">
+                <span>
+                    <i class="mini circle teal icon"></i>
+                    <span th:text="${blog.title}">
+                        Lorem ipsum dolor sit amet.
+                    </span>
+                    <div class="ui orange basic left pointing label m-padding-mini " th:text="${blog.flag}">原创</div>
+                </span>
+                    <div class="ui teal basic left pointing label" th:text="${#dates.format(blog.updateTime,'MMMdd')}">
+                        2/14/2019
+                    </div>
+                </a>
+            </div>
+        </th:block>
+
+    </div>
+</div>
+
+<!--footer-->
+<footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padding-tb-massive"></footer>
+
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
+
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+</script>
+
+</body>
+</html>

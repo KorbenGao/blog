@@ -145,6 +145,10 @@ body {
     color: #333 !important;
 }
 
+.m-teal {
+    color: teal !important;
+}
+
 .m-right-top {
     position: absolute;
     top: 0;
