@@ -89,15 +89,15 @@
                     <div class="ui orange basic label">
                         <div class="ui images" style="font-size: inherit !important;">
                             <div class="image">
-                                <img src="../static/images/wechat_qr_code.jpg" alt=""
-                                     th:src="@{/images/wechat_qr_code.jpg}"
+                                <img src="../static/images/wechat_pay_qr_code.jpg" alt=""
+                                     th:src="@{/images/wechat_pay_qr_code.jpg}"
                                      class="ui rounded bordered image"
                                      style="width: 150px;">
                                 <div>WeChat</div>
                             </div>
                             <div class="image">
-                                <img src="../static/images/wechat_qr_code.jpg" alt=""
-                                     th:src="@{/images/wechat_qr_code.jpg}"
+                                <img src="../static/images/alipay_qr_code.jpg" alt=""
+                                     th:src="@{/images/alipay_qr_code.jpg}"
                                      class="ui rounded bordered image"
                                      style="width: 150px;">
                                 <div>AliPay</div>
@@ -114,12 +114,11 @@
                 <div class="eleven wide column">
                     <ui class="list">
                         <li>
-                            Author:<span th:text="${blog.user.nickname}">Author</span>
-                            <a href="#" th:href="@{/about}" target="_blank">（contact）</a>
+                            Author:&nbsp;<span th:text="${blog.user.nickname}">Author</span>
+                            <a href="#" th:href="@{/about}" target="_blank">（Contact）</a>
                         </li>
-                        <li>Date:<span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm')}">Time</span></li>
-                        <li>版权声明：<span>自由转载-非商用-非衍生-保持署名</span></li>
-                        <li>公众号转载：<span>请在文末添加作者公众号二维码</span></li>
+                        <li>Date:&nbsp;<span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm')}">Time</span>
+                        </li>
                     </ui>
                 </div>
                 <div class="five wide column">
@@ -195,31 +194,32 @@
                     </div>
                 </div>
             </div>
+
             <!--Comment Form-->
             <div id="comment-form" class="ui form">
                 <input type="hidden" name="blog.id" th:value="${blog.id}">
                 <input type="hidden" name="parentComment.id" value="-1">
                 <div class="field">
-                    <textarea name="content" placeholder="请输入评论信息..."></textarea>
+                    <textarea name="content" placeholder="input comments..."></textarea>
                 </div>
                 <div class="fields">
                     <div class="field m-mobile-wide m-margin-bottom-small">
                         <div class="ui left icon input">
                             <i class="user icon"></i>
-                            <input type="text" name="nickname" placeholder="姓名"
+                            <input type="text" name="nickname" placeholder="Name"
                                    th:value="${session.user}!=null ? ${session.user.nickname}">
                         </div>
                     </div>
                     <div class="field m-mobile-wide m-margin-bottom-small">
                         <div class="ui left icon input">
                             <i class="mail icon"></i>
-                            <input type="text" name="email" placeholder="邮箱"
+                            <input type="text" name="email" placeholder="Email"
                                    th:value="${session.user}!=null ? ${session.user.email}">
                         </div>
                     </div>
                     <div class="field  m-margin-bottom-small m-mobile-wide">
                         <button id="commentpost-btn" type="button" class="ui teal button m-mobile-wide"><i
-                                class="edit icon"></i>发布
+                                class="edit icon"></i>Add reply
                         </button>
                     </div>
                 </div>

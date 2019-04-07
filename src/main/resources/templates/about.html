@@ -33,38 +33,55 @@
                     <div class="ui header">About me</div>
                 </div>
                 <div class="ui attached segment">
-                    <p class="m-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, animi at
-                        blanditiis commodi consequuntur cumque dicta dolor dolores enim eum exercitationem
-                        expedita facilis hic in inventore iste itaque, nemo non nostrum numquam odit pariatur
-                        quam quos repellendus sapiente sed sit sunt unde voluptas voluptatibus. Aliquid
-                        aspernatur excepturi nam neque tempora?</p>
-                    <p class="m-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi
-                        blanditiis dicta doloribus dolorum expedita incidunt qui repudiandae sed ut.</p>
+                    <p class="m-text">Hi, I'm Korben. I graduated from University of Melbourne majoring in Software
+                        Engineering. I like coding, writing and all electronic products.</p>
+                    <p class="m-text">I'm happy to learn from each other with you and have some common progress.</p>
                 </div>
                 <div class="ui attached segment">
-                    <div class="ui orange basic left pointing label">编程</div>
-                    <div class="ui orange basic left pointing label">写作</div>
-                    <div class="ui orange basic left pointing label">思考</div>
-                    <div class="ui orange basic left pointing label">运动</div>
+                    <a data-content="I love coding" class="ui orange basic left pointing label hobbycoding"><i
+                            class="fas fa-code"></i></a>
+                    <a data-content="I go to gym" class="ui orange basic left pointing label hobbygym"><i
+                            class="fas fa-dumbbell"></i></a>
+                    <a data-content="I like writing" class="ui orange basic left pointing label hobbywriting"><i
+                            class="fas fa-marker"></i></a>
+                    <a data-content="I play guitar" class="ui orange basic left pointing label hobbyguitar"><i
+                            class="fas fa-guitar"></i></a>
+                    <a data-content="I keen on electronic products"
+                       class="ui orange basic left pointing label hobbyelec"><i
+                            class="fas fa-tablet-alt"></i></a>
                 </div>
                 <div class="ui attached segment">
                     <div class="ui teal basic left pointing label m-margin-tb-tiny">Java</div>
                     <div class="ui teal basic left pointing label m-margin-tb-tiny">JavaScript</div>
-                    <div class="ui teal basic left pointing label m-margin-tb-tiny">Node</div>
-                    <div class="ui teal basic left pointing label m-margin-tb-tiny">React</div>
-                    <div class="ui teal basic left pointing label m-margin-tb-tiny">RN</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">Spring boot</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">Hadoop</div>
                     <div class="ui teal basic left pointing label m-margin-tb-tiny">MYSQL</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">Python</div>
                     <div class="ui teal basic left pointing label m-margin-tb-tiny">...</div>
                 </div>
                 <div class="ui bottom attached segment">
-                    <a href="#" class="ui circular icon button"><i class="github icon"></i></a>
-                    <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
-                    <a href="#" class="ui qq circular icon button" data-content="865729312"
-                       data-position="bottom center"><i class="qq icon"></i></a>
+                    <a href="https://www.linkedin.com/in/korben-gao/"
+                       th:src="@{https://www.linkedin.com/in/korben-gao/}" target="_blank"
+                       class="ui circular icon button">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.facebook.com/yuan.gao.5851127" target="_blank"
+                       th:src="@{https://www.facebook.com/yuan.gao.5851127}"
+                       class="ui circular icon button">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="ui wechat circular icon button">
+                        <i class="weixin icon"></i>
+                    </a>
+                    <a href="#" class="ui qq circular icon button" data-content="602582796"
+                       data-position="bottom center">
+                        <i class="qq icon"></i>
+                    </a>
                 </div>
 
                 <div class="ui wechat-qr flowing popup transition hidden">
-                    <img src="../static/images/wechat.jpg" alt="" class="ui rounded image" style="width: 110px">
+                    <img src="../static/images/wechat_qr_code.jpg" th:src="@{/images/wechat_qr_code.jpg}" alt=""
+                         class="ui rounded image" style="width: 110px">
                 </div>
             </div>
         </div>
@@ -90,8 +107,14 @@
         popup: $('.wechat-qr'),
         position: 'bottom center'
     });
-
     $('.qq').popup();
+
+    $('.hobbycoding').popup();
+    $('.hobbygym').popup();
+    $('.hobbywriting').popup();
+    $('.hobbyguitar').popup();
+    $('.hobbyelec').popup();
+
 </script>
 
 </body>
