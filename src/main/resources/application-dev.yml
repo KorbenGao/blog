@@ -15,6 +15,3 @@ logging:
     com.korben.blog: debug
   file: log/blog-dev.log
 
-server:
-  port: 80
-

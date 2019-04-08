@@ -27,7 +27,7 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/login")
+    @GetMapping
     public String loginPage() {
         return "admin/login";
     }
@@ -41,7 +41,7 @@ public class LoginController {
         User user = userService.checkUser(username, password);
         if (user != null) {
             user.setPassword(null);
-            session.setAttribute("user",user);
+            session.setAttribute("user", user);
             return "admin/index";
         } else {
             attributes.addFlashAttribute("message", "Invalid username or password");
