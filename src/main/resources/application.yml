@@ -7,7 +7,7 @@ spring:
     basename: i18n/messages
 
 server:
-  port: 80
+  port: 8080
 
 comment.avatar: /images/avatar.png
 
